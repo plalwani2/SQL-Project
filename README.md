@@ -20,7 +20,7 @@ Google BigQuery was used to run the SQL queries and Google Sheets for visualizat
 
 I used the player_info table to count the player_id and then grouped by the day they joined, this is to find the total number of players who joined each day. Also a subquery was incorporated into this query.
 
-After doing using the `JOIN` function for the match_info table with the player_info table by the common key of player_id. We retrieved the maximum number of days the player played by using the `MAX` function along with a `CASE` statement to obtain the number of players retained and not retained. The `CASE` statement was essentially used to generate if the players were present for thirty days or more then they are considered retained and if it was lower than thirty days then they were not retained.
+After doing using the `JOIN` function for the match_info table with the player_info table by the common key of player_id. We retrieved the maximum number of days the player played by using the `MAX` function along with a `CASE WHEN` syntax to obtain the number of players retained and not retained. The `CASE WHEN` syntax was essentially used to generate if the players were present for thirty days or more then they are considered retained and if it was lower than thirty days then they were not retained.
 
 After joining these queries, I was able to populate the player count, retention status, fractional retention(calculated by `SUM(retention_status)/ COUNT(player_id)`, this is essentially calculating the retention rate of the total number of player joined.
 
