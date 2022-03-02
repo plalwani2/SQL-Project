@@ -43,12 +43,12 @@ On this query, a triple `JOIN` function had to be used in order to get the avera
 
 ### **Visualizations**
 
-As you may notice from the below two chart which illustrates the average spending by location and the average spending by age.
+As you may notice from the below two charts which illustrates the average spending by location and the average spending by age.
 
 
 ![Spendingbylocation](AverageSpendingByLocation.png)
 
-This above graph shows that the retained players spent lower than the non retained in all continents. So to me, I feel that the company should consider more in-game options to attract higher retention rates so that the retained players will start to spend more. Also a loyalty program would be a great option to sustain and potentially grow clientele.
+This above graph shows that the retained players spent lower than the non retained ones from all continents. So to me, I feel that the company should consider more in-game options to attract higher retention rates so that the retained players will start to spend more. Also a loyalty program would be a great option to sustain and potentially grow clientele.
 
 
 ![Spendingbyage](AverageSpendingByAge.png)
