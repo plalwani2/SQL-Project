@@ -1,0 +1,88 @@
+Query 1) Is the 30-day rolling retention increasing or decreasing over the lifecycle of the game?
+
+  /* The below query will retrieve the day in question,
+  total number of players who joined that day,
+  how many were retained from
+  the ones who joined
+  AND the fractional retention of the retained players */
+SELECT
+  joined AS day,
+  COUNT(player_id) AS num_joined,
+  SUM(Retention_Status) AS num_retained,
+  ROUND((SUM(Retention_Status)/COUNT(player_id)), 2) * 100 AS fractional_retention
+FROM (
+  SELECT
+    DISTINCT p.player_id,
+    p.joined,
+    CASE
+      WHEN (MAX(m.day) - min (p.joined) ) >= 30 THEN 1 -- Retained players
+    ELSE
+    0 -- NOT retained players
+  END
+    AS Retention_Status
+  FROM
+    `plalwani2.SQL_project.player_info` AS p
+  JOIN
+    `plalwani2.SQL_project.Match_info` AS m
+  ON
+    p.player_id = m.player_id
+  GROUP BY
+    p.joined,
+    p.player_id)
+GROUP BY
+  joined;
+
+Query 2) Do retained players on average spend more or less on the game products than non-retained players by age and location?
+
+ /* The below query will retrieve the total spending FOR retained
+  AND non retained players BY location
+  AND age*/
+SELECT
+  RE.Retention_status AS Retention,
+  Age,
+  location,
+  ROUND (SUM (TS.total_spent) / COUNT(TS.player_id), 2) AS Average_Spent_Per_Player
+FROM (
+  SELECT
+    P.player_id,
+    P.location,
+    p.Age,
+    CASE
+      WHEN MAX(m.day) - MIN (P.joined) >= 30 THEN "Retained"
+    ELSE
+    "Not retained"
+  END
+    AS Retention_status
+  FROM
+    `plalwani2.SQL_project.player_info` AS P
+  JOIN
+    `plalwani2.SQL_project.Match_info` AS M
+  ON
+    P.player_id = M.player_id
+  WHERE
+    p.joined <= 335 -- This is to retrieve the players who joined before the 335th day because we are looking to retrieve the players on a 30 day rolling retention for the year
+  GROUP BY
+    P.player_id,
+    P.joined,
+    p.age,
+    P.location ) AS RE
+JOIN (
+  SELECT
+    Pr.player_id,
+    SUM(I.price) AS total_spent
+  FROM
+    `plalwani2.SQL_project.Item_info` AS I
+  JOIN
+    `plalwani2.SQL_project.purchase_info` AS Pr
+  ON
+    I.item_id = Pr.item_id
+  GROUP BY
+    Pr.player_id ) AS TS
+ON
+  RE.player_id = TS.player_id
+GROUP BY
+  RE.Retention_status,
+  location,
+  Age
+ORDER BY
+  Age;
