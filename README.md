@@ -59,10 +59,10 @@ The above graph outlines the average spending by the age group for retained vs n
 ## **REFERENCES:**
 
 **Google sheets for retentions data:**
-https://docs.google.com/spreadsheets/d/1PthgCzzGT96ARQnHtguA-_YwQIwSI6F-trkUuaaoA2k/edit?usp=sharing 
+https://docs.google.com/spreadsheets/d/1PthgCzzGT96ARQnHtguA-_YwQIwSI6F-trkUuaaoA2k/edit?usp=sharing
 
 **Google sheets for spending data by age and location:**
-https://docs.google.com/spreadsheets/d/1alD_AW41SoTzG_-Iq0pB8sylxOhlit5Ck_F79pGroHY/edit?usp=sharing 
+https://docs.google.com/spreadsheets/d/1alD_AW41SoTzG_-Iq0pB8sylxOhlit5Ck_F79pGroHY/edit?usp=sharing
 
 **SQL Queries:** 
 
