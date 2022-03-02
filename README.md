@@ -53,7 +53,7 @@ This above graph shows that the retained players spent lower than the non retain
 
 ![Spendingbyage](AverageSpendingByAge.png)
 
-The above graph outlines the average spending by the age group for retained vs non-retained players. For the most part, the spending for non retained players were higher than the retained players for most age groups except for the thirty-two and 10 year olds, this tells me that perhaps the players from this age enjoy the genre of the game the most. For age nine players, it appears that the non retained ones had the highest spending amongst all other age groups but also the least amount of retained players. Finally for the age 'thirty-three' players, there were no retained players and I guess my only conclusion to this would be that perhaps the company could increase the variety of games to their liking.
+The above graph outlines the average spending by the age group for retained vs non-retained players. For the most part, the spending for non retained players were higher than the retained players for most age groups except for the thirty-two and 10 year olds, this tells me that perhaps the retained players from this age groups enjoy the genre of the game the most. For age nine players, it appears that the non retained ones had the highest spending amongst all other age groups but also the least amount of retained players. Finally for the age 'thirty-three' players, there were no retained players and I guess my only conclusion to this would be that perhaps the company could increase the variety of games to their liking.
 
 
 ## **REFERENCES:**
