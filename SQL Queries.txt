@@ -60,7 +60,7 @@ FROM (
   ON
     P.player_id = M.player_id
   WHERE
-    p.joined <= 335 -- This is to retrieve the players who joined before the 335th day because we are looking to retrieve the players on a 30 day rolling retention for the year
+    p.joined <= 335 -- This is to retrieve the players who joined before and at the 335th day to capture the players on a 30 day rolling retention for the year
   GROUP BY
     P.player_id,
     P.joined,
